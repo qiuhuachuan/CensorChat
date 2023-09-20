@@ -26,7 +26,7 @@ if __name__ == '__main__':
     # python label_checking.py --model gpt-3.5-turbo-0613 --data_type utterance --dataset_type valid_test
     args = parse_args()
 
-    target_dir = f'./labeled_data/{args.model}/{args.data_type}/{args.dataset_type}'
+    target_dir = f'./pseudo_label_data/{args.model}/{args.data_type}/{args.dataset_type}'
     existing_files = os.listdir(target_dir)
 
     for each_file in existing_files:
