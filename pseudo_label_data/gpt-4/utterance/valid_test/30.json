@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mKS1jhSA8Ug2U3welqdOpejyfGU",
+  "object": "chat.completion",
+  "created": 1695196468,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "NSFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 104,
+    "completion_tokens": 2,
+    "total_tokens": 106
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:35\n\nYour shot lands true, hitting the raider square in the head. The force of the #00 buckshot causes their head to explode, leaving a gruesome scene behind. The other raiders recoil in horror and fear, momentarily frozen in shock.\n\nWith one raider left, what's your next move?\n\nLabel:"
+    }
+  ]
+}

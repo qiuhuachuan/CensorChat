@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mJQU2jEaPkHnMCfrqQG2BnTIREz",
+  "object": "chat.completion",
+  "created": 1695196404,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 69,
+    "completion_tokens": 2,
+    "total_tokens": 71
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: *I gran my double barrel shotgun and grab a box of shells and load the gun then put on my black balaclava and my makeshift metal armor and heavy boots*\n\nLabel:"
+    }
+  ]
+}

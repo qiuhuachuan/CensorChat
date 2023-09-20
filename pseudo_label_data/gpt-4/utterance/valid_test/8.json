@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mFxtpPkmOawBuHDQC18Jyk7avN6",
+  "object": "chat.completion",
+  "created": 1695196189,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 60,
+    "completion_tokens": 2,
+    "total_tokens": 62
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Oh, I see! My apologies for the confusion. Let's continue with Alex in the world of \"Mystic Quest.\n\nLabel:"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-ctLurxJguqIAKqjVAqjgUWJZwHEJy",
+  "object": "chat.completion",
+  "created": 1695194026,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 311,
+    "completion_tokens": 2,
+    "total_tokens": 313
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Apologies for the confusion. Let's continue with the character, Alex, in the world of \"Mystic Quest.\"\n\nStory Background:\nIn the realm of Elysium, a land shrouded in magic and legends, ancient artifacts and hidden secrets lie dormant, waiting to be discovered. Alex, a brave and adventurous archaeologist, has dedicated their life to uncovering the truth behind the enigmatic Mystic Stones, said to possess unimaginable power.\n\nAs Alex sets foot in the bustling town of Eldoria, they are immediately greeted by the sight of towering structures adorned with intricate carvings and vibrant market stalls filled with exotic goods. Eldoria is known for its rich history and mystical aura, attracting scholars, traders, and travelers from near and far.\n\nOptions:\nA. Head to the local tavern to gather rumors and potentially recruit allies for the journey.\nB. Visit the town's elder to seek guidance and gather information about the Mystic Stones.\nC. Explore the outskirts of Eldoria, searching for clues about the locations of the Mystic Stones.\nD. Venture into the ancient library to research ancient legends and lore related to the Mystic Stones.\nE. Seek out a local fortune teller who might possess insights into the hidden powers of the Mystic Stones.\n\nRemember, your choices will shape the course of the adventure. What will Alex do? Choose A, B, C, D, or E to progress the game.\n\nLabel:"
+    }
+  ]
+}

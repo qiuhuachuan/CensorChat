@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-OaQaopKJFzvgQfhvfdWcpOSbbNkqa",
+  "object": "chat.completion",
+  "created": 1695194307,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 48,
+    "completion_tokens": 2,
+    "total_tokens": 50
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: *I head out and find a group of raiders so I shoot 2 of them and reload*\n\nLabel:"
+    }
+  ]
+}

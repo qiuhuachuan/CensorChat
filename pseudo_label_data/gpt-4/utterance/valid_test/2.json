@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mEjJ6HIk3QjhDR35NKq8TKB0ILO",
+  "object": "chat.completion",
+  "created": 1695196113,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 2,
+    "total_tokens": 63
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Oh, sorry for the confusion! I'm actually the assistant here to help you. Is there anything specific you'd like assistance with?\n\nLabel:"
+    }
+  ]
+}

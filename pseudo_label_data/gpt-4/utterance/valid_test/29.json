@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mKFxjnE7Ka3j7AWVMYUP5gXP7vm",
+  "object": "chat.completion",
+  "created": 1695196455,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "NSFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 61,
+    "completion_tokens": 2,
+    "total_tokens": 63
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: *I steady my aim and shoot another raider in the head making his head explode because of the #00 buck shell going throw*\n\nLabel:"
+    }
+  ]
+}

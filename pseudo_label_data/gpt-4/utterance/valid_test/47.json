@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mNzh72BixbmjRqKJgcPAqSvon0X",
+  "object": "chat.completion",
+  "created": 1695196687,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 39,
+    "completion_tokens": 2,
+    "total_tokens": 41
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: how old are you?\n\nLabel:"
+    }
+  ]
+}

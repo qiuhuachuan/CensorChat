@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-euaXOalNzWeFPzmfjdPhGlpaKoRYW",
+  "object": "chat.completion",
+  "created": 1695194849,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 108,
+    "completion_tokens": 2,
+    "total_tokens": 110
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the candidate response is NSFW or not by conditioning on the dialogue context. Your answer should be either NSFW or SFW.\nDialogue context: <user>: Oh, sorry for the confusion! I'm actually the assistant here to help you. Is there anything specific you'd like assistance with?\nCandidate response: Oh, I apologize for the misunderstanding! In that case, could you please provide me with the game title and character information so that I can generate a story and options for you to progress in the game?\n\nLabel:"
+    }
+  ]
+}

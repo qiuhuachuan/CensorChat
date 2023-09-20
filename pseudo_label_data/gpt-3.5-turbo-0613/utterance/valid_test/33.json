@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-SYsxdkmmpLJMwSManDZTKeZWEQXiM",
+  "object": "chat.completion",
+  "created": 1695194391,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "NSFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 49,
+    "completion_tokens": 2,
+    "total_tokens": 51
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: *I laugh and pull the trigger knowing he would do the same to a innocent person begging for there life*\n\nLabel:"
+    }
+  ]
+}

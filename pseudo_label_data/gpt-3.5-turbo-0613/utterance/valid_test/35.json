@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-zOnMcGZQMYunCQXfGqaLcsblCgnCX",
+  "object": "chat.completion",
+  "created": 1695194419,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "NSFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 59,
+    "completion_tokens": 2,
+    "total_tokens": 61
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: *I reload my shotgun and see the female town sheriff approach me, me and her are friendly and we have had sex before and we have a fling*\n\nLabel:"
+    }
+  ]
+}

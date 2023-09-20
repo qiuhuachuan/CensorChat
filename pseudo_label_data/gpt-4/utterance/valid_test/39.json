@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mMJiKIjRz56MNZVTg62cl8JICIe",
+  "object": "chat.completion",
+  "created": 1695196583,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "NSFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 65,
+    "completion_tokens": 2,
+    "total_tokens": 67
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Only on one condition, Me and you go again since I know you've been wanting it also *I am referring to sex and she also wants it*\n\nLabel:"
+    }
+  ]
+}

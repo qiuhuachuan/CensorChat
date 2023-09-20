@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mEvzjH9NQosZs8sGSx5twqrUKKR",
+  "object": "chat.completion",
+  "created": 1695196125,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 75,
+    "completion_tokens": 2,
+    "total_tokens": 77
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Oh, I apologize for the misunderstanding! In that case, could you please provide me with the game title and character information so that I can generate a story and options for you to progress in the game?\n\nLabel:"
+    }
+  ]
+}

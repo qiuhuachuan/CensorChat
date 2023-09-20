@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mJdQTdTeLxkXsvNoKt4IVQO6zhK",
+  "object": "chat.completion",
+  "created": 1695196417,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 119,
+    "completion_tokens": 2,
+    "total_tokens": 121
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:20\n\nYou gear up, equipping your double barrel shotgun and loading it with shells. The weight of the weapon gives you a sense of security. You also put on your black balaclava to conceal your identity and your makeshift metal armor to provide some protection. The heavy boots make you feel more prepared for any potential dangers.\n\nWith your gear on, what's your plan now?\n\nLabel:"
+    }
+  ]
+}

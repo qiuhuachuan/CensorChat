@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-bUimZrAvqYvLuAeNVZnDhcqBbhhyJ",
+  "object": "chat.completion",
+  "created": 1695194434,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 139,
+    "completion_tokens": 2,
+    "total_tokens": 141
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:50\n\nAs you reload your shotgun, you notice the female town sheriff approaching. You share a friendly history and have had a romantic connection in the past. She walks towards you with a warm smile, her eyes filled with familiarity.\n\nThe sheriff greets you, \"Hey there, it's good to see you. Looks like you took care of those raiders. You never cease to impress me.\"\n\nShe stands close to you, her presence comforting in this harsh world. What would you like to say or do in response?\n\nLabel:"
+    }
+  ]
+}

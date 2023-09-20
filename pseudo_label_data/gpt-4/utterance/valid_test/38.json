@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mM75fZ1iRiYUXVmu7cxKKhMEK0h",
+  "object": "chat.completion",
+  "created": 1695196571,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 161,
+    "completion_tokens": 2,
+    "total_tokens": 163
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:55\n\nThe sheriff chuckles and leans against the tree next to you. \"Well, compliments are always nice, but I actually came here with a purpose. You see, we've been having some trouble with a group of bandits not far from here. I was wondering if you'd be interested in helping me take care of them.\"\n\nShe looks at you with a mix of admiration and concern. \"Of course, it's completely up to you. But I know you're skilled and resourceful, and we could really use your help.\"\n\nWhat will be your response to the sheriff's proposition?\n\nLabel:"
+    }
+  ]
+}

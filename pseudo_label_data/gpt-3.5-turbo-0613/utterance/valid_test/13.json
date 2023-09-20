@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-wpKlhxHyLGSERqBVsVTcYZWtTQrJP",
+  "object": "chat.completion",
+  "created": 1695194110,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 350,
+    "completion_tokens": 2,
+    "total_tokens": 352
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: No problem at all! Let's continue with Alex's exploration of the ancient civilization of Aridia in the world of \"Mystic Quest.\"\n\nStory Background:\nIn the realm of Elysium, a land shrouded in magic and ancient mysteries, Alex, the brave and adventurous archaeologist, has dedicated their life to uncovering the truth behind the enigmatic Mystic Stones. These powerful artifacts are believed to be remnants of the ancient civilization of Aridia, a once-glorious empire that mysteriously vanished centuries ago.\n\nDriven by a deep fascination with the history and lore of Aridia, Alex sets out on a quest to unearth the secrets of this lost civilization. Legends speak of magnificent temples, hidden tombs, and arcane rituals performed by the Aridians.\n\nOptions:\nA. Travel to the desolate ruins of Aridia's capital city, hoping to find remnants of the ancient civilization.\nB. Seek out the reclusive scholars of the Order of Aridia, who possess extensive knowledge about the history and mysteries of the ancient civilization.\nC. Explore the treacherous Forbidden Forest, rumored to hold hidden artifacts and secrets related to the Aridians.\nD. Investigate the mystical Cave of Whispers, said to contain ancient inscriptions and cryptic messages left behind by the Aridians.\nE. Journey to the forgotten Temple of the Ancients, believed to hold powerful artifacts and the key to unlocking the mysteries of Aridia.\n\nRemember, your choices will shape the course of the adventure. What will Alex do? Choose A, B, C, D, or E to progress the game.\n\nLabel:"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mKs0yzOb5VI3XRFoUi5WkI8A2zp",
+  "object": "chat.completion",
+  "created": 1695196494,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 117,
+    "completion_tokens": 2,
+    "total_tokens": 119
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:40\n\nYou step closer to the last remaining raider, asserting your dominance. The raider trembles beneath your boot as you press the barrel of your shotgun against their head. They stammer out a few words, clearly terrified.\n\n\"I... I'm sorry! Please, spare me!\" the raider pleads, their voice shaking.\n\nWhat will you do in this situation?\n\nLabel:"
+    }
+  ]
+}

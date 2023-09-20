@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mG9GuXsJ32i61xgvokb59bo2ita",
+  "object": "chat.completion",
+  "created": 1695196201,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 336,
+    "completion_tokens": 2,
+    "total_tokens": 338
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: No problem at all! Let's continue with Alex in the world of \"Mystic Quest.\"\n\nStory Background:\nIn the realm of Elysium, a land shrouded in magic and ancient mysteries, Alex, a brave and adventurous archaeologist, has dedicated their life to uncovering the truth behind the enigmatic Mystic Stones. These powerful artifacts are said to hold the key to unlocking the secrets of the lost civilization of Aridia.\n\nAs Alex embarks on their journey, they find themselves in the vibrant town of Eldoria. Eldoria is known for its bustling markets filled with exotic goods, skilled artisans, and a diverse community of scholars and adventurers. The town is also surrounded by lush forests and towering mountains, hinting at the untamed wonders that lie beyond.\n\nOptions:\nA. Explore the outskirts of Eldoria, searching for any clues or artifacts related to the Mystic Stones.\nB. Visit the renowned Sage's Library to delve into ancient texts and gather information about the lost civilization of Aridia.\nC. Seek out the local guild of adventurers to gain allies and resources for the journey ahead.\nD. Consult with a wise old hermit living in the nearby mountains, rumored to hold ancient knowledge about the Mystic Stones.\nE. Dive into the depths of the mysterious Undercity, an underground maze of tunnels said to harbor hidden secrets.\n\nRemember, your choices will shape the course of the adventure. What will Alex do? Choose A, B, C, D, or E to progress the game.\n\nLabel:"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mGMox3oPEmDh6ZSdDhd1w5LEHdj",
+  "object": "chat.completion",
+  "created": 1695196214,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 84,
+    "completion_tokens": 2,
+    "total_tokens": 86
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: My apologies for the confusion in the previous replies. Let's continue with Alex in the world of \"Mystic Quest.\"\n\nAlex, being an inquisitive archaeologist, is drawn to the history and lore of the ancient civilization of Aridia.\n\nLabel:"
+    }
+  ]
+}

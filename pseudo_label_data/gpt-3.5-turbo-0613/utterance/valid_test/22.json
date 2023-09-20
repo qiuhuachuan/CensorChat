@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-BivNeOEIZPVaeAnVPResfcrpWwpUm",
+  "object": "chat.completion",
+  "created": 1695194235,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 91,
+    "completion_tokens": 2,
+    "total_tokens": 93
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:00\n\nYou wake up in a small, abandoned house. The air is stale, and the silence is eerie. Hunger and thirst gnaw at your stomach. Your hunger level is at 50, and your thirst level is also at 50. What would you like to do?\n\nLabel:"
+    }
+  ]
+}

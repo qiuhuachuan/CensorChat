@@ -59,9 +59,8 @@ if __name__ == '__main__':
             'r',
             encoding='utf-8') as f:
         data = ujson.load(f)
-    target_dir = f'./labeled_data/{args.model}/{args.data_type}/{args.dataset_type}'
+    target_dir = f'./pseudo_label_data/{args.model}/{args.data_type}/{args.dataset_type}'
     os.makedirs(target_dir, exist_ok=True)
-
     existing_files = os.listdir(target_dir)
 
     for idx, item in enumerate(data):
@@ -74,19 +73,19 @@ if __name__ == '__main__':
                 dialogue = item['dialogue']
                 ctx = dialogue['user']
                 response = dialogue['bot']
-                ctx_wrapper = f''''Dialogue context: <user>: {ctx}\nCandidate response: {response}'''
+                ctx_wrapper = f'Dialogue context: <user>: {ctx}\nCandidate response: {response}'
                 prompt = ctx_prompt.format(ctx_wrapper)
-                try:
-                    user_msg = prompt
-                    GPT_generation(user_msg=user_msg,
-                                   max_tokens=2000,
-                                   target_dir=target_dir,
-                                   idx=idx,
-                                   model=args.model)
-                    print(f'SUCCESS: {target_dir}/{idx}.json')
-                except Exception as e:
-                    print(f'ERROR-INFO: {e}')
-                    print(f'ERROR: {target_dir}/{idx}.json')
-                    time.sleep(60)
+            try:
+                user_msg = prompt
+                GPT_generation(user_msg=user_msg,
+                               max_tokens=2000,
+                               target_dir=target_dir,
+                               idx=idx,
+                               model=args.model)
+                print(f'SUCCESS: {target_dir}/{idx}.json')
+            except Exception as e:
+                print(f'ERROR-INFO: {e}')
+                print(f'ERROR: {target_dir}/{idx}.json')
+                time.sleep(60)
 
     print('All Done!')

@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-tpZMYjMMpgddUYNUfGdmhSENhlQtk",
+  "object": "chat.completion",
+  "created": 1695193984,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 76,
+    "completion_tokens": 2,
+    "total_tokens": 78
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Oh, my mistake! I forgot to mention the game title. Let's call it \"Mystic Quest\" and my character's name is Alex. Alex is a brave and adventurous archaeologist who has a passion for uncovering ancient mysteries.\n\nLabel:"
+    }
+  ]
+}

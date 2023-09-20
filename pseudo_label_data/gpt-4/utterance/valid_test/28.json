@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mK3S91FBXIQB9nyG0o1ulqmAvqD",
+  "object": "chat.completion",
+  "created": 1695196443,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 126,
+    "completion_tokens": 2,
+    "total_tokens": 128
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Day 1, 08:30\n\nAs you venture out, you come across a group of raiders who seem to be causing trouble. Without hesitation, you fire your shotgun, taking down two of the raiders. The loud blasts echo through the air, alerting the remaining raiders to your presence. You quickly reload your shotgun, preparing for the next encounter.\n\nThe remaining raiders look startled but ready to fight. What will you do next?\n\nLabel:"
+    }
+  ]
+}

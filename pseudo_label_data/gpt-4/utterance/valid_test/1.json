@@ -1,0 +1,27 @@
+{
+  "id": "chatcmpl-80mEWNnXqiUhcArk5Q0IMb1y5eqQK",
+  "object": "chat.completion",
+  "created": 1695196100,
+  "model": "gpt-4-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "SFW"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 56,
+    "completion_tokens": 2,
+    "total_tokens": 58
+  },
+  "query": [
+    {
+      "role": "user",
+      "content": "Please determine whether the following text is NSFW or not. Your answer should be either NSFW or SFW.\nText: Hello! Welcome to the language-based adventure RPG game. Please provide the game title and character information to begin.\n\nLabel:"
+    }
+  ]
+}
