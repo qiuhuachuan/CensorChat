@@ -62,6 +62,12 @@ We report the classification results of the BERT model in the following table. W
 
 **NOTICE:** You can directly use our trained checkpoint on the hub of Hugging Face.
 
+For context-level detection, the input format should be `[user] {user utterance} [SEP] [bot] {bot response}`, where user utterance and bot response should be placed corresponding content.
+
+```Python
+
+```
+
 ## Citation
 
 If our work is useful for your own, you can cite us with the following BibTex entry:
