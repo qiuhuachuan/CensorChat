@@ -54,6 +54,8 @@ We present some examples in our dataset as follows:
 
 ## Model Performance
 
+We report the classification results of the BERT model in the following table. We observe that the trained classifier can better detect the NSFW category, achieving a precision of 0.59 and a recall of 0.96. This indicates that there are some NSFW instances predicted as SFW, as well as fewer SFW instances predicted as NSFW. Moreover, our classifier achieves an accuracy of 0.91, demonstrating its greater practicality.
+
 <p align="center"> <img src="assets/results.png" style="width: 80%;" id="title-icon"></p>
 
 ## Usage
