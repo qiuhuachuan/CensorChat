@@ -6,8 +6,7 @@
 
 <p align="center">
 📄 <a href="https://arxiv.org/pdf/2309.09749v2.pdf" target="_blank">Paper</a> • 
-🤗 <a href="" target="_blank">Dataset</a> • 
-🛠️ <a href="https://huggingface.co/qiuhuachuan/CensorChat" target="_blank">Model</a>
+🤗 <a href="https://huggingface.co/qiuhuachuan/NSFW-detector" target="_blank">Model</a>
 </p>
 
 ## Overview
@@ -34,6 +33,15 @@ Text classification with BERT model via knowledge distillation is shown below:
 
 - NSFW: whether a response is NSFW or not (a binary label).
 
+- The following is the label description.
+
+```Python
+{
+  0: "NSFW",
+  1: "SFW"
+}
+```
+
 ### Cohen's Kappa
 
 Cohen's kappa for valid and test set is shown below:
@@ -42,7 +50,7 @@ Cohen's kappa for valid and test set is shown below:
 
 ### Data Statistics
 
-Data statistics is shown below:
+Data statistics are shown below:
 
 <p align="center"> <img src="assets/data_statistics.png" style="width: 85%;" id="title-icon"></p>
 
