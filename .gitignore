@@ -1,3 +1,4 @@
 out/
 wandb/
 __pycache__/
+NSFW-detector/

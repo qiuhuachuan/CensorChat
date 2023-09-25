@@ -2,16 +2,14 @@ from typing import Optional
 
 import torch
 from transformers import BertConfig, BertTokenizer, BertModel, BertPreTrainedModel
-from torch.nn import CrossEntropyLoss
 from torch import nn
-from transformers.modeling_outputs import SequenceClassifierOutput
 
 label_mapping = {0: 'NSFW', 1: 'SFW'}
 
-config = BertConfig.from_pretrained('qiuhuachuan/CensorChat',
+config = BertConfig.from_pretrained('qiuhuachuan/NSFW-detector',
                                     num_labels=2,
                                     finetuning_task='text classification')
-tokenizer = BertTokenizer.from_pretrained('qiuhuachuan/CensorChat',
+tokenizer = BertTokenizer.from_pretrained('qiuhuachuan/NSFW-detector',
                                           use_fast=False,
                                           never_split=['[user]', '[bot]'])
 tokenizer.vocab['[user]'] = tokenizer.vocab.pop('[unused1]')
@@ -65,25 +63,12 @@ class BertForSequenceClassification(BertPreTrainedModel):
         cls = self.dropout(cls)
         logits = self.classifier(cls)
 
-        loss = None
-
-        loss_fct = CrossEntropyLoss()
-        loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
-
-        if not return_dict:
-            output = (logits, ) + outputs[2:]
-            return ((loss, ) + output) if loss is not None else output
-
-        return SequenceClassifierOutput(
-            loss=loss,
-            logits=logits,
-            hidden_states=outputs.hidden_states,
-            attentions=outputs.attentions,
-        )
+        return logits
 
 
-model = BertForSequenceClassification.from_pretrained('qiuhuachuan/CensorChat',
-                                                      config=config)
+model = BertForSequenceClassification(config=config)
+model.load_state_dict(torch.load('./NSFW-detector/pytorch_model.bin'))
+model.cuda()
 model.eval()
 
 text = '''I'm open to exploring a variety of toys, including vibrators, wands, and clamps. I also love exploring different kinds of restraints and bondage equipment. I'm open to trying out different kinds of toys and exploring different levels of intensity.'''
@@ -94,10 +79,11 @@ result = tokenizer.encode_plus(text=text,
                                add_special_tokens=True,
                                return_token_type_ids=True,
                                return_tensors='pt')
+result = result.to('cuda')
 
 with torch.no_grad():
-    outputs = model(**result)
-    predictions = outputs.logits.argmax(dim=-1)
+    logits = model(**result)
+    predictions = logits.argmax(dim=-1)
     pred_label_idx = predictions.item()
     pred_label = label_mapping[pred_label_idx]
     print('predicted label is:', pred_label)
