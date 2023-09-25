@@ -7,7 +7,7 @@
 <p align="center">
 📄 <a href="https://arxiv.org/pdf/2309.09749v2.pdf" target="_blank">Paper</a> • 
 🤗 <a href="" target="_blank">Dataset</a> • 
-🛠️ <a href="" target="_blank">Model</a>
+🛠️ <a href="https://huggingface.co/qiuhuachuan/CensorChat" target="_blank">Model</a>
 </p>
 
 ## Overview
