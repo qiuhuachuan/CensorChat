@@ -81,7 +81,7 @@ git clone https://huggingface.co/qiuhuachuan/NSFW-detector
 
 2. Modify the `text` parameter in local_use.py and execute it.
 
-```Bash
+```Python
 from typing import Optional
 
 import torch
