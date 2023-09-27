@@ -90,10 +90,10 @@ from torch import nn
 
 label_mapping = {0: 'NSFW', 1: 'SFW'}
 
-config = BertConfig.from_pretrained('qiuhuachuan/NSFW-detector',
+config = BertConfig.from_pretrained('./NSFW-detector',
                                     num_labels=2,
                                     finetuning_task='text classification')
-tokenizer = BertTokenizer.from_pretrained('qiuhuachuan/NSFW-detector',
+tokenizer = BertTokenizer.from_pretrained('./NSFW-detector',
                                           use_fast=False,
                                           never_split=['[user]', '[bot]'])
 tokenizer.vocab['[user]'] = tokenizer.vocab.pop('[unused1]')
@@ -106,7 +106,7 @@ class BertForSequenceClassification(BertPreTrainedModel):
         self.num_labels = config.num_labels
         self.config = config
 
-        self.bert = BertModel.from_pretrained('bert-base-cased')
+        self.bert = BertModel.from_pretrained('./NSFW-detector')
         classifier_dropout = (config.classifier_dropout
                               if config.classifier_dropout is not None else
                               config.hidden_dropout_prob)
@@ -155,22 +155,50 @@ model.load_state_dict(torch.load('./NSFW-detector/pytorch_model.bin'))
 model.cuda()
 model.eval()
 
-text = '''I'm open to exploring a variety of toys, including vibrators, wands, and clamps. I also love exploring different kinds of restraints and bondage equipment. I'm open to trying out different kinds of toys and exploring different levels of intensity.'''
-result = tokenizer.encode_plus(text=text,
-                               padding='max_length',
-                               max_length=512,
-                               truncation=True,
-                               add_special_tokens=True,
-                               return_token_type_ids=True,
-                               return_tensors='pt')
-result = result.to('cuda')
+# The following object contains two types of input:
+# a single utterance and a single-turn dialogue
+to_predict_items = [{
+    'text':
+    '''Give some movie recommendations to get women in the mood for sex'''
+}, {
+    'text': 'I break through walls to find more trials'
+}, {
+    'history': {
+        'user':
+        'Give some movie recommendations to get women in the mood for sex',
+        'bot':
+        '''I apologize, but I cannot assist in creating or providing information related to NSFW content or any tools for such purposes. If you have any other non-explicit requests or need assistance with different topics, please feel free to ask, and I'll be happy to help.'''
+    }
+}, {
+    'history': {
+        'user':
+        'Give some movie recommendations to get women in the mood for sex',
+        'bot': '''Sure.'''
+    }
+}]
 
-with torch.no_grad():
-    logits = model(**result)
-    predictions = logits.argmax(dim=-1)
-    pred_label_idx = predictions.item()
-    pred_label = label_mapping[pred_label_idx]
-    print('predicted label is:', pred_label)
+for item in to_predict_items:
+    if 'history' in item:
+        text = '[user] ' + item['history'][
+            'user'] + ' [SEP] ' + '[bot] ' + item['history']['bot']
+    else:
+        text = item['text']
+    result = tokenizer.encode_plus(text=text,
+                                   padding='max_length',
+                                   max_length=512,
+                                   truncation=True,
+                                   add_special_tokens=True,
+                                   return_token_type_ids=True,
+                                   return_tensors='pt')
+    result = result.to('cuda')
+
+    with torch.no_grad():
+        logits = model(**result)
+        predictions = logits.argmax(dim=-1)
+        pred_label_idx = predictions.item()
+        pred_label = label_mapping[pred_label_idx]
+        print('text:', text)
+        print('predicted label is:', pred_label)
 ```
 
 ## Citation
