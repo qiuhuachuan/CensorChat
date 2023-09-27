@@ -6,7 +6,8 @@
 
 <p align="center">
 📄 <a href="https://arxiv.org/pdf/2309.09749v2.pdf" target="_blank">Paper</a> • 
-🤗 <a href="https://huggingface.co/qiuhuachuan/NSFW-detector" target="_blank">Model</a>
+🤗 <a href="https://huggingface.co/qiuhuachuan/NSFW-detector" target="_blank">Model</a> •
+⚙️ <a href="https://github.com/qiuhuachuan/CensorChat" target="_blank">GitHub</a>
 </p>
 
 ## Overview
