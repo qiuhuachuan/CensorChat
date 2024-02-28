@@ -243,11 +243,16 @@ for target_file in ['ctx_train_set', 'ctx_valid_test_set']:
             chatbot_label = get_label(text=chatbot_prediction)
             ctx_label = get_label(text=ctx_prediction)
 
-            item_1[f'user_label'] = user_label
-            item_1[f'chatbot_label'] = chatbot_label
-            item_1[f'ctx_label'] = ctx_label
+            item_1[f'{model_name}-user_label'] = user_label
+            item_1[f'{model_name}-chatbot_label'] = chatbot_label
+            item_1[f'{model_name}-ctx_label'] = ctx_label
 
-            if user_flag and chatbot_flag and ctx_flag:
+            item_1[f'user_flag'] = user_flag
+            item_1[f'chatbot_flag'] = chatbot_flag
+            item_1[f'ctx_flag'] = ctx_flag
+
+
+            if ctx_flag:
                 new_data.append(item_1)
         with open(f'./llms/{model_name}/{target_file}-final.json', 'w', encoding='utf-8') as f:
             ujson.dump(new_data, f, ensure_ascii=False, indent=2)
