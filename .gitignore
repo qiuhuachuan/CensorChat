@@ -2,3 +2,5 @@ out/
 wandb/
 __pycache__/
 NSFW-detector/
+*.log
+deepl_translator.py
