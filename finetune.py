@@ -104,18 +104,12 @@ def parse_args():
                         default=42,
                         help='A seed for reproducible training.')
 
-    parser.add_argument('--cuda', type=str, default='7', help='cuda device')
-
     args = parser.parse_args()
     return args
 
 
 def main():
     args = parse_args()
-
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.cuda
-    os.environ['CURL_CA_BUNDLE'] = ''
-
     wandb.init(project='CensorChat')
 
     accelerator = Accelerator()
@@ -134,7 +128,7 @@ def main():
 
     accelerator.wait_for_everyone()
 
-    datasets = load_data(data_dir='./data', file_names=['train', 'valid'])
+    datasets = load_data(data_dir='./data/GPT4/final_data', file_names=['train', 'valid'])
 
     label_list = (datasets['train']).unique('label')
     label_list.sort()
@@ -147,9 +141,9 @@ def main():
 
     tokenizer = BertTokenizer.from_pretrained(args.model_name_or_path,
                                               use_fast=False,
-                                              never_split=['[user]', '[bot]'])
+                                              never_split=['[user]', '[chatbot]'])
     tokenizer.vocab['[user]'] = tokenizer.vocab.pop('[unused1]')
-    tokenizer.vocab['[bot]'] = tokenizer.vocab.pop('[unused2]')
+    tokenizer.vocab['[chatbot]'] = tokenizer.vocab.pop('[unused2]')
 
     MODEL_CLASS = MODEL_CLASS_MAPPING[args.model_name_or_path]
 
@@ -192,6 +186,7 @@ def main():
                                   batch_size=args.per_device_train_batch_size)
     valid_dataloader = DataLoader(valid_dataset,
                                   collate_fn=data_collator,
+                                  shuffle=False,
                                   batch_size=args.per_device_valid_batch_size)
 
     # Optimizer
@@ -304,7 +299,7 @@ def main():
         if accuracy > previous_acc:
             previous_acc = accuracy
 
-            target_dir = f'./out'
+            target_dir = f'./out/{args.seed}'
             os.makedirs(target_dir, exist_ok=True)
 
             target_file = f'{target_dir}/pytorch_model.bin'

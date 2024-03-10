@@ -1,3 +1,4 @@
-cuda=1
+export CUDA_VISIBLE_DEVICES=2
+seed=46
 
-nohup python -u eval.py --cuda ${cuda} > ./log/eval.log &
+nohup python -u eval.py --seed ${seed}  > ./log/eval-${seed}.log &

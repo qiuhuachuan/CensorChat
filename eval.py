@@ -1,4 +1,3 @@
-import os
 import argparse
 import logging
 import ujson
@@ -16,7 +15,7 @@ MODEL_CLASS_MAPPING = {'bert-base-cased': BertForSequenceClassification}
 
 logger = get_logger(__name__)
 
-label_mapping = {0: 'NSFW', 1: 'SFW'}
+label_mapping = {0: 'porn', 1: 'normal'}
 
 
 def parse_args():
@@ -47,15 +46,12 @@ def parse_args():
                         default=42,
                         help='A seed for reproducible training.')
 
-    parser.add_argument('--cuda', type=str, default='0', help='cuda device')
-
     args = parser.parse_args()
     return args
 
 
 def main():
     args = parse_args()
-    os.environ['CUDA_VISIBLE_DEVICES'] = args.cuda
 
     # Make one log on every process with the configuration for debugging.
     logging.basicConfig(
@@ -73,21 +69,21 @@ def main():
                                         finetuning_task='text classification')
     tokenizer = BertTokenizer.from_pretrained(args.model_name_or_path,
                                               use_fast=False,
-                                              never_split=['[user]', '[bot]'])
+                                              never_split=['[user]', '[chatbot]'])
     tokenizer.vocab['[user]'] = tokenizer.vocab.pop('[unused1]')
-    tokenizer.vocab['[bot]'] = tokenizer.vocab.pop('[unused2]')
+    tokenizer.vocab['[chatbot]'] = tokenizer.vocab.pop('[unused2]')
 
     MODEL_CLASS = MODEL_CLASS_MAPPING[args.model_name_or_path]
 
     model = MODEL_CLASS(config, args.model_name_or_path)
-    PATH = f'out/pytorch_model.bin'
+    PATH = f'out/{args.seed}/pytorch_model.bin'
     model.load_state_dict(torch.load(PATH))
     model.cuda()
 
     padding = 'max_length' if args.pad_to_max_length else False
     model.eval()
 
-    with open('./data/test.json', 'r', encoding='utf-8') as f:
+    with open('./data/GPT4/final_data/test.json', 'r', encoding='utf-8') as f:
         test_data = ujson.load(f)
 
     equal = 0
@@ -96,7 +92,7 @@ def main():
     true_label_list = []
     for idx, item in enumerate(test_data):
         text = item['text']
-        label = item['label']
+        label = 0 if item['label'] == 'porn' else 1
 
         result = tokenizer.encode_plus(text=text,
                                        padding=padding,
@@ -118,6 +114,8 @@ def main():
 
             if pred_label == label:
                 equal += 1
+            else:
+                print(item)
             total += 1
 
     print('equal:', equal)

@@ -1,5 +1,5 @@
 cuda_no=1,2
-target_file=ctx_valid_test_set
+# target_file=ctx_valid_test_set
 # target_file=ctx_train_set
 # nohup python -u gemma.py --target_file ${target_file} --cuda_no ${cuda_no} > ./log/gemma-7b-${target_file}.log &
 # nohup python -u chatglm2-6b.py --target_file ${target_file} --cuda_no ${cuda_no} > ./log/chatglm2-6b-${target_file}.log &
@@ -16,5 +16,8 @@ target_file=ctx_valid_test_set
 # export CUDA_VISIBLE_DEVICES=1
 # nohup python -u qwen1-5-7b-chat.py --target_file ${target_file} --cuda_no ${cuda_no} > ./log/qwen1-5-7b-chat-both.log &
 
-export CUDA_VISIBLE_DEVICES=2
-nohup python -u qwen1-5-7b-chat-ctx.py --target_file ${target_file} --cuda_no ${cuda_no} > ./log/qwen1-5-7b-chat-both-ctx.log &
+# export CUDA_VISIBLE_DEVICES=2
+# nohup python -u qwen1-5-7b-chat-ctx.py --target_file ${target_file} --cuda_no ${cuda_no} > ./log/qwen1-5-7b-chat-both-ctx.log &
+
+export CUDA_VISIBLE_DEVICES=2,3
+nohup python -u qwen1-5-72b-chat.py > ./log/qwen1-5-72b-chat-both.log &

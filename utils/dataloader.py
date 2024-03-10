@@ -12,7 +12,7 @@ def load_data(data_dir: str, file_names: list):
 
         for item in data:
             text = item['text']
-            label = item['label']
+            label = 0 if item['label'] == 'porn' else 1
 
             instances['text'].append(text)
             instances['label'].append(label)
