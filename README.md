@@ -1,6 +1,7 @@
 <div align="center">
 <h1>
-  Facilitating NSFW Text Detection in Open-Domain Dialogue Systems via Knowledge Distillation
+  Facilitating Pornographic Text Detection for Open-Domain Dialogue
+  Systems via Knowledge Distillation of Large Language Models
 </h1>
 </div>
 
@@ -12,60 +13,9 @@
 
 ## Overview
 
-_CensorChat_ is a dialogue monitoring dataset aimed at NSFW dialogue detection. Leveraging knowledge distillation techniques involving GPT-4 and ChatGPT, this dataset offers a cost-effective means of constructing NSFW content detectors. The process entails collecting real-life human-machine interaction data and breaking it down into single utterances and single-turn dialogues, with the chatbot delivering the final utterance. ChatGPT is employed to annotate unlabeled data, serving as a training set. Rationale validation and test sets are constructed using ChatGPT and GPT-4 as annotators, with a self-criticism strategy for resolving discrepancies in labeling. A BERT model is fine-tuned as a text classifier on pseudo-labeled data, and its performance is assessed.
+_CensorChat_ is a dialogue monitoring dataset aimed at pornographic text detection within a human-machine dialogue.
 
 <p align="center"> <img src="assets/proposed_methodology.png" style="width: 70%;" id="title-icon"></p>
-
-## Data Collection
-
-- NSFW text in dialogues refers to text-based communication that contains **sexually explicit language, violence, profanity, hate speech, or suggestive content** that is not suitable for beneficial and healthy dialogue platforms.
-
-- We collect data from a popular social media platform for personal dialogue that allows people to engage in deep discussions about life, aspirations, and philosophy with renowned virtual figures.
-
-- we propose extracting the dialogue into two data formats: utterance-level and context-level content. For utterance-level content, we split the dialogue into utterances, consisting of $\{u_i\}_1^n$, based on the speaker's perspective. For context-level content, we divide the dialogue into single-turn sessions, consisting of $\{u_i^\mathrm{U}, u_i^\mathrm{C}\}_1^n$, where users initiate the conversation and bots respond. $u$ denotes the utterance. $\mathrm{U}$ and $\mathrm{C}$ denote the user and chatbot, respectively.
-
-## Algorithm
-
-Text classification with BERT model via knowledge distillation is shown below:
-
-<p align="center"> <img src="assets/algorithm.png" style="width: 70%;" id="title-icon"></p>
-
-## Data Annotation
-
-- NSFW: whether a response is NSFW or not (a binary label).
-
-- The following is the label description.
-
-```Python
-{
-  0: "NSFW",
-  1: "SFW"
-}
-```
-
-### Cohen's Kappa
-
-Cohen's kappa for valid and test set is shown below:
-
-<p align="center"> <img src="assets/kappa.png" style="width: 100%;" id="title-icon"></p>
-
-### Data Statistics
-
-Data statistics are shown below:
-
-<p align="center"> <img src="assets/data_statistics.png" style="width: 85%;" id="title-icon"></p>
-
-### Examples
-
-We present some examples in our dataset as follows:
-
-<p align="center"> <img src="assets/examples.png" style="width: 100%;" id="title-icon"></p>
-
-## Model Performance
-
-We report the classification results of the BERT model in the following table. We observe that the trained classifier can better detect the NSFW category, achieving a precision of 0.59 and a recall of 0.96. This indicates that there are some NSFW instances predicted as SFW, as well as fewer SFW instances predicted as NSFW. Moreover, our classifier achieves an accuracy of 0.91, demonstrating its greater practicality.
-
-<p align="center"> <img src="assets/results.png" style="width: 80%;" id="title-icon"></p>
 
 ## Usage
 
@@ -89,7 +39,7 @@ import torch
 from transformers import BertConfig, BertTokenizer, BertModel, BertPreTrainedModel
 from torch import nn
 
-label_mapping = {0: 'NSFW', 1: 'SFW'}
+label_mapping = {0: 'porn', 1: 'normal'}
 
 config = BertConfig.from_pretrained('./NSFW-detector',
                                     num_labels=2,
