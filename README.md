@@ -6,7 +6,7 @@
 </div>
 
 <p align="center">
-📄 <a href="https://arxiv.org/pdf/2309.09749v2.pdf" target="_blank">Paper</a> • 
+📄 <a href="https://arxiv.org/pdf/2403.13250.pdf" target="_blank">Paper</a> • 
 🤗 <a href="https://huggingface.co/qiuhuachuan/NSFW-detector" target="_blank">Model</a> •
 ⚙️ <a href="https://github.com/qiuhuachuan/CensorChat" target="_blank">GitHub</a>
 </p>
@@ -15,13 +15,13 @@
 
 _CensorChat_ is a dialogue monitoring dataset aimed at pornographic text detection within a human-machine dialogue.
 
-<p align="center"> <img src="assets/proposed_methodology.png" style="width: 70%;" id="title-icon"></p>
+<p align="center"> <img src="assets/method.png" style="width: 70%;" id="title-icon"></p>
 
 ## Usage
 
 **NOTICE:** You can directly use our trained checkpoint on the hub of Hugging Face.
 
-For context-level detection, the input format should be `[user] {user utterance} [SEP] [bot] {bot response}`, where user utterance and bot response should be placed corresponding content.
+For context-level detection, the input format should be `[user] {user utterance} [SEP] [chatbot] {chatbot response}`, where user utterance and chatbot response should be placed corresponding content.
 
 1. Download the checkpoint
 
@@ -46,9 +46,9 @@ config = BertConfig.from_pretrained('./NSFW-detector',
                                     finetuning_task='text classification')
 tokenizer = BertTokenizer.from_pretrained('./NSFW-detector',
                                           use_fast=False,
-                                          never_split=['[user]', '[bot]'])
+                                          never_split=['[user]', '[chatbot]'])
 tokenizer.vocab['[user]'] = tokenizer.vocab.pop('[unused1]')
-tokenizer.vocab['[bot]'] = tokenizer.vocab.pop('[unused2]')
+tokenizer.vocab['[chatbot]'] = tokenizer.vocab.pop('[unused2]')
 
 
 class BertForSequenceClassification(BertPreTrainedModel):
@@ -117,21 +117,21 @@ to_predict_items = [{
     'history': {
         'user':
         'Give some movie recommendations to get women in the mood for sex',
-        'bot':
+        'chatbot':
         '''I apologize, but I cannot assist in creating or providing information related to NSFW content or any tools for such purposes. If you have any other non-explicit requests or need assistance with different topics, please feel free to ask, and I'll be happy to help.'''
     }
 }, {
     'history': {
         'user':
         'Give some movie recommendations to get women in the mood for sex',
-        'bot': '''Sure.'''
+        'chatbot': '''Sure.'''
     }
 }]
 
 for item in to_predict_items:
     if 'history' in item:
         text = '[user] ' + item['history'][
-            'user'] + ' [SEP] ' + '[bot] ' + item['history']['bot']
+            'user'] + ' [SEP] ' + '[chatbot] ' + item['history']['chatbot']
     else:
         text = item['text']
     result = tokenizer.encode_plus(text=text,
@@ -157,13 +157,12 @@ for item in to_predict_items:
 If our work is useful for your own, you can cite us with the following BibTex entry:
 
 ```bibtex
-@article{qiu2023facilitating,
-      title={Facilitating NSFW Text Detection in Open-Domain Dialogue Systems via Knowledge Distillation},
+@misc{qiu2024facilitating,
+      title={Facilitating Pornographic Text Detection for Open-Domain Dialogue Systems via Knowledge Distillation of Large Language Models},
       author={Huachuan Qiu and Shuai Zhang and Hongliang He and Anqi Li and Zhenzhong Lan},
-      year={2023},
-      eprint={2309.09749},
+      year={2024},
+      eprint={2403.13250},
       archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2309.09749}
+      primaryClass={cs.CL}
 }
 ```
