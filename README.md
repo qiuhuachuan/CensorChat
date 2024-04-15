@@ -1,9 +1,6 @@
-<div align="center">
-<h1>
-  Facilitating Pornographic Text Detection for Open-Domain Dialogue
-  Systems via Knowledge Distillation of Large Language Models
-</h1>
-</div>
+# Facilitating Pornographic Text Detection for Open-Domain Dialogue Systems via Knowledge Distillation of Large Language Models
+
+🎉🎉🎉 Accepted to CSCWD 2024 (27th International Conference on Computer Supported Cooperative Work in Design) **(CCF-C)**
 
 <p align="center">
 📄 <a href="https://arxiv.org/pdf/2403.13250.pdf" target="_blank">Paper</a> • 
